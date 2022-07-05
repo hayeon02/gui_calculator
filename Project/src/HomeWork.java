@@ -17,7 +17,7 @@ public class HomeWork extends JFrame {
 	private JLabel status;
 	
 	public HomeWork() {
-		this.setTitle("°è»ê±â");
+		this.setTitle("ê³„ì‚°ê¸°");
 		Image icon = Toolkit.getDefaultToolkit().getImage("calc.gif");
 		this.setIconImage(icon);
 		this.setBounds(100, 100, 300, 450);
@@ -32,7 +32,7 @@ public class HomeWork extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(6,4));
 		
-		//°è»êÇÏ´Â °Å º¸¿©ÁÖ´Â °Í, ±ÛÀÚ ÇÏ³ª Áö¿ì±â(±æÀÌ -1)
+		//ê¸€ìž í•˜ë‚˜ ì§€ìš°ê¸°(ê¸¸ì´ -1)
 		
 		JButton btn0 = new JButton("0");
 		btn0.addActionListener( e -> {
@@ -148,11 +148,11 @@ public class HomeWork extends JFrame {
 			operator = "X";
 		});
 		
-		JButton btnDivision = new JButton("¡À");
+		JButton btnDivision = new JButton("Ã·");
 		btnDivision.addActionListener( e -> {
 			op1 = Double.parseDouble(display.getText());
 			display.setText("0");
-			operator = "¡À";
+			operator = "Ã·";
 		});
 		
 		JButton btnPercent = new JButton("%");
@@ -198,16 +198,16 @@ public class HomeWork extends JFrame {
 			display.setText(""+this.op1);
 		});
 		
-		JButton btnRoot = new JButton("2¡îx");
+		JButton btnRoot = new JButton("2âˆšx");
 		btnRoot.addActionListener( e -> {
 			op1 = Double.parseDouble(display.getText());
-			operator = "2¡îx";
+			operator = "2âˆšx";
 		});
 		
 		JButton btnSquare = new JButton("x^2");
 		btnSquare.addActionListener( e -> {
 			op1 = Double.parseDouble(display.getText());
-			operator = "2¡îx";
+			operator = "2âˆšx";
 		});
 		
 		JButton btnFraction = new JButton("1/x");
@@ -216,7 +216,7 @@ public class HomeWork extends JFrame {
 			operator = "1/x";
 		});
 		
-		JButton btnDelete = new JButton("¡ç");
+		JButton btnDelete = new JButton("â†");
 		btnDelete.addActionListener( e -> {
 			if(0<display.getText().length()-1) {
 				display.setText(display.getText().substring(0, display.getText().length() - 1));
@@ -232,7 +232,7 @@ public class HomeWork extends JFrame {
 		panel.add(btn1);panel.add(btn2);panel.add(btn3);panel.add(btnPlus);
 		panel.add(btnSign);panel.add(btn0);panel.add(btnDot);panel.add(btnEqual);
 		
-		JLabel status = new JLabel("°è»ê±â");
+		JLabel status = new JLabel("ê³„ì‚°ê¸°");
 		this.setLayout(new BorderLayout());
 		this.add(BorderLayout.NORTH, display);
 		this.add(BorderLayout.CENTER, panel);
@@ -251,14 +251,14 @@ public class HomeWork extends JFrame {
 		case "X":
 			result = op1 * op2;
 			break;
-		case "¡À":
+		case "Ã·":
 			result = op1 / op2;
 			break;
 		case "%":
 			result = 1 / result;
 			result = result * 10;
 			break;
-		case "2¡îx":
+		case "2âˆšx":
 			result = Math.sqrt(op1);
 			break;
 		case "x^2":
